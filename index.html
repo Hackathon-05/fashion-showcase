@@ -1,12 +1,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Responsive-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
     <!--Custom CSS-->
-    <link rel="stylesheet" href=".\hackathon.css">
+    <link rel="stylesheet" href=".\index.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -14,16 +20,37 @@
         <h1>PRODUCT SHOWCASE</h1>
     </header>
 
-    <nav>
-      <ul class="header-nav">
-        <li>HOME</li>
-        <li>PRODUCTS</li>
-        <li>CONTACT US</li>
-      </ul>
+    <!--INI BAGIAN NAVIGATION BAR-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Sefora</a>
+    
+      <div class="collapse navbar-collapse" id="navbar-featured-selection">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">HOME</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">PRODUCTS</a>
+            <div class="dropdown-menu" style="display:none;">
+              <a class="dropdown-item" href="#">Women's clothing</a>
+              <a class="dropdown-item" href="#">Men's clothing</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Bespoke tailoring</a>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">CONTACT US</a>
+          </li>
+          <li class="nav-item active right">
+            <a class="nav-link" href="#" onclick="document.getElementById('fav-list').classList.toggle('hidden')"><i class="bi bi-handbag-fill"></i></a>
+          </li>
+        </ul>
+      </div>
     </nav>
     
+    <!--INI BAGIAN SHOWCASE-->
     <article>
-      <div id="carouselExample" class="carousel slide">
+      <div id="featured-showcase" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="./plc-image-1.jpg" class="d-block w-100" alt="...">
@@ -35,24 +62,25 @@
             <img src="./plc-image-3.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#featured-showcase" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#featured-showcase" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </article>
 
+    <!--INI BAGIAN BLOG ARTICLE-->
     <section class="main-article">
       <div class="card fashion-item" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Nama baju</h5>
           <p class="card-text">Description singkat.</p>
-          <p class="fashion-item-stars">5 stars<br><span class="fashion-item-stars-reviewed">20 ratings</span></p>
+          <p class="fashion-item-stars">3 stars<br><span class="fashion-item-stars-reviewed">20 ratings</span></p>
           <a href="#" class="btn btn-primary">Lirik lebih banyak</a>
           <a href="#" class="btn btn-secondary">Add to list</a>
         </div>
@@ -79,13 +107,25 @@
       </div>
     </section>
 
-    <div class="fav-list">Add items to your favourite list</div>
+    <!--INI BAGIAN FAVOURITE LIST-->
+    <div class="sidebar d-flex flex-column flex-shrink-0 text-bg-dark flex-shrink-0 p-3 hidden" id="fav-list">
+      <span class="fs-4">My Favourites</span>
+      <hr>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+      <hr>
+      
+    </div>
     
+    <!--INI FOOTER-->
     <footer>
       Copyright lorem ipsum
     </footer>
 
     <script>
+      
     </script>
 </body>
 </html>

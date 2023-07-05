@@ -1,0 +1,40 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+article {
+    clear: left;
+}
+
+.main-article {
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+.fashion-item {
+    float: left;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+i {
+    vertical-align: middle;
+}
+
+.sidebar {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    width: 300px;
+    height: 95vh;
+    z-index: 1050;
+    /* background-color: #454545;
+    color:azure;
+    padding: 30px 20px; */
+}
+
+footer {
+    clear: left;
+    margin: 40px 20px 20px 20px;
+    border-top: 1px solid #454545;
+}
