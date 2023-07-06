@@ -99,7 +99,7 @@ function createCard(obj) {
   let avgRating = ratingTotal === 0 ? 0 : Math.floor(ratingTotal / ratingCount * 10) / 10;
 
   let template = `
-    <div id="${id}" class="card fashion-item" style="width: 18rem" 
+    <div id="${id}" class="card fashion-item" 
     onclick="selectItem('${id}');">
     <img src="${imageURL}" class="card-img-top" />
     <div class="card-body">

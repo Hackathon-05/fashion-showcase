@@ -73,6 +73,7 @@ h1 {
     box-shadow: 1px 1px 20px rgb(200, 200, 200);
     cursor: pointer;
     transition: 0.6s;
+    width:15rem;
 }
 
 .card:hover {
@@ -84,6 +85,7 @@ h1 {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     transition: 0.8s;
+    width:100%;
 }
 
 .card-img-top:hover {
@@ -205,4 +207,13 @@ footer {
 .disabled {
     pointer-events: none;
     background-color: rgb(215, 215, 215);
+}
+
+/* .comment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} */
+
+.comment-form input[type="text"], .comment-form input[type="number"]  {
+    width:500px;
 }
