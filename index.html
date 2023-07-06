@@ -78,14 +78,17 @@
 
     <section class="centered-div">
       <!-- <div class="spacer"> </div> -->
-      <h1>Interested in an item?</h1>
-      <p class="comment-form-sub">Leave a comment and tell a friend!</p>
+      <h1>Ada baju yang menarik?</h1>
+      <p class="comment-form-sub">Share yuk dengan teman-teman!</p>
       <div class="flex-container">
         <form class="comment-form" action="#" onsubmit="echo(); return false;">
-          <label for="item">Item:</label>
+          <label for="item">Nama item:</label>
           <input type="text" name="item" id="form-item" class="flex-shrink" placeholder="Baju" /><br>
-          <label for="name">Name:</label>
-          <input type="text" name="name" id="form-name" class="flex-shrink" placeholder="John Doe" /><br>
+          <label for="desc">Deskripsi:</label>
+          <input type="text" name="desc" id="form-desc" class="flex-shrink" placeholder="Kemeja" /><br>
+          <label for="url">Link foto:</label>
+          <input type="text" name="url" id="form-image-url" class="flex-shrink" placeholder="https://..." /><hr>
+          <h6>Ayo tinggalkan komen!</h6>
           <label for="rating">Rating:</label>
           <input type="number" name="rating" id="form-rating" class="flex-shrink" placeholder="5 stars" min="1" max="5" /><br>
           <label for="comment">Say something!</label>
@@ -101,6 +104,6 @@
     </footer>
 
     <script src="backend.js"></script>
-    
+
 </body>
 </html>

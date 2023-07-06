@@ -99,7 +99,7 @@ for (let i = 0; i < database.length; i++) {
 
     let itemComments = database[i].comments;
     itemComments = itemComments.map( comment => `<q class="comment">${comment}</q>`);
-    let templateComment = `<q class="comment">${itemComments.join('<br>')}</q>`;
+    let templateComment = itemComments.join('<br>');
 
     let template = `
     <div id="${database[i].id}" class="card fashion-item" style="width: 18rem" 
@@ -152,9 +152,10 @@ function selectItem(elementID) {
 }
 
 function echo() {
-    let formInputName = document.getElementById("form-name").value;
-    let formInputItem = document.getElementById("form-item").value;
+    let formInputItemName = document.getElementById("form-item").value;
+    let formInputDesc = document.getElementById("form-desc").value;
+    let formInputImageURL = document.getElementById("form-image-url").value;
     let formInputRating = document.getElementById("form-rating").value;
     let formInputComment = document.getElementById("form-comment").value;
-    console.log(formInputName, formInputItem, formInputRating, formInputComment);
+    console.log(formInputItemName, formInputDesc, formInputImageURL, formInputRating, formInputComment);
 }
