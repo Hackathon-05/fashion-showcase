@@ -4,6 +4,26 @@ article {
     clear: left;
 }
 
+h1 {
+    margin: 0 0 0 0;
+    font-size: 60px; font-style: unset;
+    color: black;
+    text-shadow: 2px 2px 4px #535151;
+    letter-spacing: 3px;
+    background-color: rgb(253, 246, 235);
+}
+
+.navbar-brand {
+    margin: 0 0 20px 0;
+    font-size: 30px; font-style: oblique;
+    letter-spacing: 4px;
+}
+
+.nav-link{
+    margin: 0 0 10px 0;
+    font-size: 15px; font-style: oblique;
+    /* letter-spacing: 5px; */
+}
 .main-article {
     margin-left: 15vw;
     margin-right: 15vw;
