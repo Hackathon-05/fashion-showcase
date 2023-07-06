@@ -131,10 +131,6 @@ footer {
     border-top: 1px solid #454545;
 }
 
-q {
-    quotes: "\201D" "\201D";
-}
-
 .flex-shrink {
     margin-top: 10px;
     margin-left: 10px;
