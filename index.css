@@ -5,13 +5,10 @@ article {
 }
 
 .main-article {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-top: 20px;
-    padding-right: 40px;
-    padding-bottom: 20px;
-    padding-left: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-left: 70px;
+    margin-top: 25px;
 }
 
 .hidden {
@@ -93,4 +90,9 @@ h1 {
 
 .comment-box {
     margin-top: 15px;
+}
+
+.image-container {
+    height: 200px;
+    width: 200px;
 }
