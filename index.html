@@ -1,21 +1,33 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
     <!--Responsive-->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    
-    <!--Custom CSS-->
-    <link rel="stylesheet" href=".\index.css">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <title>H8</title>
-</head>
-<body>
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href=".\index.css" />
+
+    <title>Fashion Showcase</title>
+  </head>
+  <body>
     <header>
         <h1 id="title">PRODUCT SHOWCASE</h1>
     </header>
@@ -23,16 +35,19 @@
     <!--INI BAGIAN NAVIGATION BAR-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Sefora</a>
-    
+
       <div class="collapse navbar-collapse" id="navbar-featured-selection">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">HOME</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" 
-            onclick="document.getElementById('product-submenu').classList.toggle('hidden')"
-            >PRODUCTS</a>
+            <a
+              class="nav-link"
+              href="#"
+              onclick="document.getElementById('product-submenu').classList.toggle('hidden')"
+              >PRODUCTS</a
+            >
             <div class="dropdown-menu submenu hidden" id="product-submenu">
               <a class="dropdown-item" href="#">Women's clothing</a>
               <a class="dropdown-item" href="#">Men's clothing</a>
@@ -46,13 +61,13 @@
         </ul>
       </div>
     </nav>
-    
+
     <!--INI BAGIAN SHOWCASE-->
     <article>
       <div id="featured-showcase" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./images/1.jpg" class="d-block w-100" alt="Our brand">
+            <img src="./images/1.jpg" class="d-block w-100" alt="Our brand" />
           </div>
           <div class="carousel-item">
             <img src="./images/2.jpg" class="d-block w-100" alt="...">
@@ -61,11 +76,21 @@
             <img src="./images/3.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#featured-showcase" data-bs-slide="prev">
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#featured-showcase"
+          data-bs-slide="prev"
+        >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#featured-showcase" data-bs-slide="next">
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#featured-showcase"
+          data-bs-slide="next"
+        >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -73,21 +98,20 @@
     </article>
 
     <!--INI BAGIAN BLOG ARTICLE-->
-    <section class="main-article" id="cards">
-    </section>
+    <section class="main-article" id="cards"></section>
 
     <section class="centered-div">
       <!-- <div class="spacer"> </div> -->
       <h1>Ada baju yang menarik?</h1>
       <p class="comment-form-sub">Share yuk dengan teman-teman!</p>
       <div class="flex-container">
-        <form class="comment-form" action="#" onsubmit="echo(); return false;">
+        <form class="comment-form" onsubmit="submitNewCardForWebsite(); return false;">
           <label for="item" class="key">Nama item:</label>
-          <input type="text" name="item" id="form-item" class="flex-shrink" placeholder="Baju" /><br>
+          <input type="text" name="item" id="form-item" class="flex-shrink" placeholder="Baju" required /><br>
           <label for="desc" class="key" >Deskripsi:</label>
-          <input type="text" name="desc" id="form-desc" class="flex-shrink" placeholder="Kemeja" /><br>
+          <input type="text" name="desc" id="form-desc" class="flex-shrink" placeholder="Kemeja" required /><br>
           <label for="url" class="key">Link foto:</label>
-          <input type="text" name="url" id="form-image-url" class="flex-shrink" placeholder="https://..." /><hr>
+          <input type="text" name="url" id="form-image-url" class="flex-shrink" placeholder="https://..." required /><hr>
           <h6>Ayo tinggalkan komen!</h6>
           <label for="rating" class="key">Rating:</label>
           <input type="number" name="rating" id="form-rating" class="flex-shrink" placeholder="5 stars" min="1" max="5" /><br>
@@ -97,13 +121,14 @@
         </form>
       </div>
     </section>
-    
+
     <!--INI FOOTER-->
-    <footer>
-      Copyright lorem ipsum
-    </footer>
+    <footer>Copyright lorem ipsum</footer>
 
     <script src="backend.js"></script>
+    <script>
+      readFromDatabase();
+    </script>
 
 </body>
 </html>
