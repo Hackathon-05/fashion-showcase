@@ -101,25 +101,6 @@
     </footer>
 
     <script src="backend.js"></script>
-    <script>
-
-      function selectItem(elementID) {
-        // deselect all items
-        document.querySelectorAll(".card.fashion-item.selected").forEach( el => {
-          el.classList.remove("selected");
-        })
-        // select current item
-        document.getElementById(elementID).classList.add("selected");
-      }
-
-      function echo() {
-        let formInputName = document.getElementById("form-name").value;
-        let formInputItem = document.getElementById("form-item").value;
-        let formInputRating = document.getElementById("form-rating").value;
-        let formInputComment = document.getElementById("form-comment").value;
-        console.log(formInputName, formInputItem, formInputRating, formInputComment);
-      }
-
-    </script>
+    
 </body>
 </html>

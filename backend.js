@@ -102,7 +102,8 @@ for (let i = 0; i < database.length; i++) {
     let templateComment = `<q class="comment">${itemComments.join('<br>')}</q>`;
 
     let template = `
-    <div class="card fashion-item" style="width: 18rem">
+    <div id="${database[i].id}" class="card fashion-item" style="width: 18rem" 
+    onclick="selectItem('${database[i].id}');">
     <img src="${database[i]["imageURL"]}" class="card-img-top" />
     <div class="card-body">
         <h5 class="card-title">${database[i].name}</h5>
@@ -140,3 +141,20 @@ for (let i = 0; i < database.length; i++) {
 }
 }
 create()
+
+function selectItem(elementID) {
+    // deselect all items
+    document.querySelectorAll(".card.fashion-item.selected").forEach( el => {
+        el.classList.remove("selected");
+    })
+    // select current item
+    document.getElementById(elementID).classList.add("selected");
+}
+
+function echo() {
+    let formInputName = document.getElementById("form-name").value;
+    let formInputItem = document.getElementById("form-item").value;
+    let formInputRating = document.getElementById("form-rating").value;
+    let formInputComment = document.getElementById("form-comment").value;
+    console.log(formInputName, formInputItem, formInputRating, formInputComment);
+}
