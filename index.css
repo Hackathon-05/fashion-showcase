@@ -5,12 +5,13 @@ article {
 }
 
 .main-article {
-    margin-left: 15vw;
-    margin-right: 15vw;
-}
-
-.fashion-item {
-    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
 }
 
 .hidden {
@@ -37,4 +38,59 @@ footer {
     clear: left;
     margin: 40px 20px 20px 20px;
     border-top: 1px solid #454545;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+.nav-link {
+    font-weight: 900;
+}
+
+.navbar-brand {
+    text-align: center;
+    margin-left: 15px;
+    font-size: 30px;
+}
+
+.card {
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 20px rgb(200, 200, 200);
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    opacity: 1;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: 0.8s;
+}
+
+.card-img-top:hover {
+    opacity: 0.6;
+    border-width: 1px;
+}
+
+.selected {
+    border-color: rgb(175, 175, 175);
+    border-width: 2px;
+    background-color: rgb(215, 215, 215);
+}
+
+.card-text {
+    color: rgb(149, 149, 149);
+    font-size: 14px;
+}
+
+.comment-box {
+    margin-top: 15px;
 }
