@@ -201,3 +201,8 @@ footer {
     height: 50px;
     width: 50px;
 }
+
+.disabled {
+    pointer-events: none;
+    background-color: rgb(215, 215, 215);
+}

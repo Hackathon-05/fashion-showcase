@@ -105,9 +105,9 @@
       <h1>Ada baju yang menarik?</h1>
       <p class="comment-form-sub">Share yuk dengan teman-teman!</p>
       <div class="flex-container">
-        <form class="comment-form" onsubmit="submitNewCardForWebsite(); return false;">
+        <form class="comment-form" onsubmit="refreshListCards(); return false;">
           <label for="item" class="key">Nama item:</label>
-          <input type="text" name="item" id="form-item" class="flex-shrink" placeholder="Baju" required /><br>
+          <input type="text" name="item" id="form-item" class="flex-shrink" placeholder="Baju" required /><div id="form-item-id" style="display: none;"></div><br>
           <label for="desc" class="key" >Deskripsi:</label>
           <input type="text" name="desc" id="form-desc" class="flex-shrink" placeholder="Kemeja" required /><br>
           <label for="url" class="key">Link foto:</label>
@@ -126,9 +126,6 @@
     <footer>Copyright lorem ipsum</footer>
 
     <script src="backend.js"></script>
-    <script>
-      readFromDatabase();
-    </script>
 
 </body>
 </html>

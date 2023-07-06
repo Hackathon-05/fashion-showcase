@@ -90,7 +90,8 @@ const database = [
       comments: ["Jaket cukup ringan dan nyaman sangat bisa buat acara formal"],
     },
   ];
-  
+
+/* Modular function: Membuat suatu html element yang meng-representasikan kartu fashion showcase */
 function createCard(obj) {
   let { id, name, imageURL, descriptionLP, ratingTotal, ratingCount, comments } = obj;
   comments = comments.map((comment) => `<q class="comment">${comment}</q>`);
@@ -117,6 +118,7 @@ function createCard(obj) {
   return template;
 }
 
+/* READ operation bagi back-end */
 function readFromDatabase() {
   let parentNode = document.getElementById("cards");
   for (let i = 0; i < database.length; i++) {
@@ -125,6 +127,7 @@ function readFromDatabase() {
   }
 }
 
+/* CREATE operation bagi back-end */
 function addNewCard() {
   let formInputItemName = document.getElementById("form-item").value;
   let formInputDesc = document.getElementById("form-desc").value;
@@ -132,7 +135,7 @@ function addNewCard() {
   let formInputRating = document.getElementById("form-rating").value;
   let formInputComment = document.getElementById("form-comment").value;
 
-  console.log(formInputItemName, formInputDesc, formInputImageURL, formInputRating, formInputComment);
+  // console.log(formInputItemName, formInputDesc, formInputImageURL, formInputRating, formInputComment);
 
   let objNew = {
     id: undefined,
@@ -159,19 +162,102 @@ function addNewCard() {
   return objNew;
 }
 
-function submitNewCardForWebsite() {
-  let objNew = addNewCard();
-  let newCard = createCard(objNew);
-  let parentNode = document.getElementById("cards");
-  parentNode.innerHTML += newCard;
-  return false;
+/* UPDATE operation bagi back-end */
+function addUserRating() {
+  let formInputItemId = document.getElementById("form-item-id").value;
+  let formInputRating = document.getElementById("form-rating").value;
+  let formInputComment = document.getElementById("form-comment").value;
+
+  const accessItem = database[formInputItemId-1];
+  console.log(172, formInputItemId, accessItem);
+  accessItem.ratingTotal += parseInt(formInputRating);
+  accessItem.ratingCount++;
+  if (formInputComment) accessItem.comments.push(formInputComment);
+
+  let updatedHTML = createCard(accessItem);
+  document.getElementById(`${formInputItemId}`).outerHTML = updatedHTML;
+  document.getElementById(`${formInputItemId}`).scrollIntoView(false);
+
+  return accessItem;
 }
 
-function selectItem(elementID) {
-  // deselect all items
-  document.querySelectorAll(".card.fashion-item.selected").forEach((el) => {
-    el.classList.remove("selected");
-  });
-  // select current item
-  document.getElementById(elementID).classList.add("selected");
+/* Callback function bagi form submit */
+function refreshListCards() {
+  let anItemIsSelected = (document.querySelectorAll(".card.fashion-item.selected").length > 0);
+  console.log(anItemIsSelected);
+  if (anItemIsSelected) {
+    // UPDATE OPERATION
+    addUserRating();
+    document.getElementById("form-item").value = "";
+    document.getElementById("form-item").classList.remove("disabled");
+    document.getElementById("form-item").required = true;
+    document.getElementById("form-item-id").value = "";
+    document.getElementById("form-desc").value = "";
+    document.getElementById("form-desc").classList.remove("disabled");
+    document.getElementById("form-desc").required = true;
+    document.getElementById("form-image-url").value = "";
+    document.getElementById("form-image-url").classList.remove("disabled");
+    document.getElementById("form-image-url").required = true;
+    document.getElementById("form-rating").value = "";
+    document.getElementById("form-rating").required = false;
+    document.getElementById("form-comment").value = "";
+  } else {
+    // CREATE OPERATION
+    let objNew = addNewCard();
+    let newCard = createCard(objNew);
+    let parentNode = document.getElementById("cards");
+    parentNode.innerHTML += newCard;
+  }
 }
+
+/* Callback function bagi onclick event listener */
+function selectItem(elementID) {
+  
+  const curElement = document.getElementById(elementID);
+  let curElementIsSelected = curElement.classList.contains("selected");
+
+  // deselect current element if already selected
+  if (curElementIsSelected) {
+    curElement.classList.remove("selected");
+    document.getElementById("form-item").value = "";
+    document.getElementById("form-item").classList.remove("disabled");
+    document.getElementById("form-item").required = true;
+    document.getElementById("form-item-id").value = "";
+    document.getElementById("form-desc").value = "";
+    document.getElementById("form-desc").classList.remove("disabled");
+    document.getElementById("form-desc").required = true;
+    document.getElementById("form-image-url").value = "";
+    document.getElementById("form-image-url").classList.remove("disabled");
+    document.getElementById("form-image-url").required = true;
+    document.getElementById("form-rating").value = "";
+    document.getElementById("form-rating").required = false;
+    document.getElementById("form-comment").value = "";
+  } else {
+    // deselect all selected items
+    document.querySelectorAll(".card.fashion-item.selected").forEach((el) => {
+      el.classList.remove("selected");
+    });
+    // select current item
+    curElement.classList.add("selected");
+    // add item data to form
+    let curItem = database[elementID-1];
+    let {id, name, descriptionLP} = curItem;
+    document.getElementById("form-item").value = name;
+    document.getElementById("form-item").classList.add("disabled");
+    document.getElementById("form-item").required = false;
+    document.getElementById("form-item-id").value = id;
+    console.log(235, id, document.getElementById("form-item-id").value);
+    document.getElementById("form-desc").value = descriptionLP;
+    document.getElementById("form-desc").classList.add("disabled");
+    document.getElementById("form-desc").required = false;
+    document.getElementById("form-image-url").value = "";
+    document.getElementById("form-image-url").classList.add("disabled");
+    document.getElementById("form-image-url").required = false;
+    document.getElementById("form-rating").value = "";
+    document.getElementById("form-rating").required = true;
+    document.getElementById("form-comment").value = "";
+  }
+  
+}
+
+readFromDatabase();
